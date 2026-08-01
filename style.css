@@ -779,30 +779,38 @@ header{
 }
 
 .menu-toggle{
-    display:block;
-    color:#ff6b35;
-}
-
-nav{
-    position:relative;
-}
-
-.nav-links{
     display:none;
-    position:absolute;
-    top:60px;
-    right:0;
+    font-size:30px;
+    cursor:pointer;
+    position:relative;
+    z-index:1001;
+}
+
+@media (max-width:768px){
+
+    .nav-links{
+    position:fixed;
+    top:70px;
+    right:15px;
     width:220px;
     background:#fff;
+    display:none;
     flex-direction:column;
-    border-radius:10px;
-    box-shadow:0 10px 20px rgba(0,0,0,.15);
+    text-align:center;
     padding:15px 0;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
     z-index:999;
 }
 
 .nav-links.active{
     display:flex;
+}
+
+.menu-toggle{
+    display:block;
+    position:relative;
+    z-index:1001;
 }
 
 .nav-links li{

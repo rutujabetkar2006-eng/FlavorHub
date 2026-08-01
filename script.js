@@ -175,10 +175,18 @@ console.log("Welcome to FlavorHub");
 // End
 // =============================
 
-
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        navLinks.classList.toggle("active");
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            navLinks.classList.remove("active");
+        }
+    });
+}
