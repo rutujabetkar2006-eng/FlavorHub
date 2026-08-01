@@ -175,18 +175,10 @@ console.log("Welcome to FlavorHub");
 // End
 // =============================
 
-// ================= Mobile Menu =================
 
 const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+const navLinks = document.querySelector(".nav-links");
 
-if(menuToggle){
-
-menuToggle.addEventListener("click",()=>{
-
-nav.classList.toggle("active");
-
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 });
-
-}
-
